@@ -1,9 +1,14 @@
 /vendor/
 /var/
 /.env.local
+/.env.local.php
 /.env.*.local
-/docker/php/config/jwt/*.pem
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/config/jwt/*.pem
 /node_modules/
 .DS_Store
 .idea/
 .vscode/
+AGENTS.md
+CLAUDE.md
