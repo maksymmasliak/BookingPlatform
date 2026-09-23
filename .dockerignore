@@ -1,6 +1,6 @@
 .git
 vendor
-var/cache
-var/log
+var
 node_modules
 .env.local
+.idea
