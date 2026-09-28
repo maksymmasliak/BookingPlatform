@@ -6,6 +6,7 @@ namespace App\Entity;
 
 use App\Enum\BusinessType;
 use App\Repository\BusinessRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: BusinessRepository::class)]
@@ -39,7 +40,7 @@ class Business
     #[ORM\Column(length: 100)]
     private ?string $timezone = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: Types::DATETIMETZ_IMMUTABLE)]
     private ?\DateTimeImmutable $createdAt = null;
 
     public function getId(): ?int
