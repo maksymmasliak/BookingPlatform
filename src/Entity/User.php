@@ -25,6 +25,10 @@ class User
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
+    #[ORM\ManyToOne(targetEntity: Business::class)]
+    #[ORM\JoinColumn(name: 'business_id', nullable: true)]
+    private ?Business $business = null;
+
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
@@ -65,6 +69,18 @@ class User
     public function setName(string $name): static
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getBusiness(): ?Business
+    {
+        return $this->business;
+    }
+
+    public function setBusiness(?Business $business): static
+    {
+        $this->business = $business;
 
         return $this;
     }
